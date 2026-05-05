@@ -9,6 +9,7 @@ function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/', isRoute: true },
     { name: 'About', href: '/about', isRoute: true },
+    { name: 'Founder', href: '/founder', isRoute: true },
     { name: 'Courses', href: '#courses' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
