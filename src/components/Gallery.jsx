@@ -22,7 +22,6 @@ const images = [
   { src: g8, alt: 'Madrasa Ziaul Uloom' },
   { src: g9, alt: 'Madrasa Ziaul Uloom' },
   { src: g10, alt: 'Teacher Office of the Madrasa' },
-
 ]
 
 function Gallery() {
@@ -40,7 +39,7 @@ function Gallery() {
   // Auto-slide
   useEffect(() => {
     if (isHovered) return
-    const interval = setInterval(nextSlide, 4000)
+    const interval = setInterval(nextSlide, 2000)
     return () => clearInterval(interval)
   }, [nextSlide, isHovered])
 
