@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import gallery5 from '../assets/gallery/gallery-5.jpg'
+import gallery5 from '../assets/home_2.png'
 
 function AboutPage() {
   useEffect(() => {

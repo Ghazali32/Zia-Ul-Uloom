@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import gallery1 from '../assets/home.jpg'
+import gallery1 from '../assets/home_2.png'
 
 function About() {
   return (

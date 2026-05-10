@@ -1,83 +1,92 @@
-import heroBg from '../assets/home_2.jpg'
+import heroBg from '../assets/home.png'
 
 function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-end overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Full-bleed background image — untouched */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
           alt="Madrasa Ziaul Uloom"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       </div>
 
-      {/* Decorative Islamic Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="w-full h-full" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+      {/* Ground shadow — only darkens the bottom third where text lives */}
+      <div
+        className="absolute inset-x-0 bottom-0"
+        style={{
+          height: '65%',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.0) 100%)',
+        }}
+      />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-        {/* Bismillah */}
-        <p className="text-accent font-arabic text-2xl md:text-3xl mb-6 opacity-90">
-          بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-        </p>
+      {/* Content — pinned to bottom */}
+      <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 pb-14">
+        <div className="max-w-3xl">
 
-        {/* Arabic Name */}
-        <h2 className="text-white/80 font-arabic text-xl md:text-2xl mb-4">
-          مدرسة ضياء العلوم
-        </h2>
-
-        {/* Main Title */}
-        <h1 className="text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Madrasa Ziaul Uloom
-        </h1>
-
-        {/* Tagline */}
-        <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-4 leading-relaxed font-light">
-          "The message, distinction, and defining hallmark of this place are the oneness of God (Tawḥīd),
-          adherence to the Prophetic tradition, and the exaltation of the Word of Truth."
-        </p>
-
-        {/* Established */}
-        <p className="text-accent text-sm md:text-base mb-10 font-medium tracking-wider uppercase">
-          Est. 4th Shawwal 1392 AH — 11th November 1972
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#contact"
-            className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
+          {/* Bismillah */}
+          <p
+            className="text-yellow-300 text-xl md:text-2xl mb-2 leading-relaxed font-bold drop-shadow-2xl"
+            style={{ fontFamily: "'Amiri', 'Scheherazade New', serif", direction: 'rtl', textAlign: 'left', textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.6)' }}
           >
-            Apply Now
-          </a>
-          <a
-            href="#contact"
-            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-3.5 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 backdrop-blur-sm"
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+          </p>
+          <h1
+            className="text-white text-5xl sm:text-6xl md:text-7xl font-bold leading-none mb-5 tracking-tight"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            Contact Us
-          </a>
-          <a
-            href="#contact"
-            className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-neutral-900 px-8 py-3.5 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-accent/30"
+            Madrasa Ziaul Uloom
+          </h1>
+
+          {/* Thin gold rule */}
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-12 bg-yellow-300" />
+            <span className="text-yellow-300 text-[10px] tracking-[0.25em] uppercase font-bold drop-shadow-2xl" style={{ textShadow: '0 3px 9px rgba(0,0,0,0.8)' }}>
+              Est. 11th November 1972
+            </span>
+          </div>
+          <p
+            className="text-white/80 text-lg sm:text-lg leading-relaxed max-w-xl mb-8"
+            style={{ fontFamily: "'Lora', Georgia, serif" }}
           >
-            Donate
-          </a>
+            "The message, distinction, and defining hallmark of this place are the oneness of God (Tawḥīd),
+            adherence to the Prophetic tradition, and the exaltation of the Word of Truth."
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-[#1b3a2d] hover:bg-[#234d3b] text-white px-7 py-3 rounded-md text-sm font-medium tracking-wide transition-all duration-300 border border-[#2a5040]"
+            >
+              Apply Now
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-7 py-3 rounded-md text-sm font-medium tracking-wide transition-all duration-300 border border-white/25"
+            >
+              Contact Us
+            </a>
+            <a
+              href="#donate"
+              className="inline-flex items-center bg-[#d4a843] hover:bg-[#c09030] text-[#0f1a10] px-7 py-3 rounded-md text-sm font-semibold tracking-wide transition-all duration-300"
+            >
+              Donate
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 right-8 animate-bounce">
+        <svg className="w-5 h-5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
